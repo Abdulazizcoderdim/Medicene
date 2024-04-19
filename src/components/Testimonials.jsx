@@ -133,19 +133,5 @@ const Testimonials = () => {
   )
 }
 
-function Modal1() {
-    return(
-        <div className="p-5 rounded-lg gap-4 flex flex-col">
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit recusandae, provident quibusdam blanditiis accusantium dolor.</p>     
-           <div className="flex gap-2 items-center">
-             <img src="../../public/logo.png" alt="" />
-             <div className="flex flex-col">
-                <h1>Courtney Henry</h1>
-                <p>Customer</p>
-             </div>
-           </div>   
-        </div>
-    )
-}
 
 export default Testimonials
