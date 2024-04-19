@@ -4,21 +4,21 @@ const data = [
   {
     id: 1,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "Courtney Henry",
     job: "Costomer"
   },
   {
     id: 2,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "Ronald Richards",
     job: "Costomer"
   },
   {
     id: 3,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "Jenny Wilson",
     job: "Costomer"
   },
@@ -28,21 +28,21 @@ const data2 = [
   {
     id: 1,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 2",
     job: "Costomer"
   },
   {
     id: 2,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 2",
     job: "Costomer"
   },
   {
     id: 3,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 2",
     job: "Costomer"
   },
@@ -52,21 +52,21 @@ const data3 = [
   {
     id: 1,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 3",
     job: "Costomer"
   },
   {
     id: 2,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 3",
     job: "Costomer"
   },
   {
     id: 3,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 3",
     job: "Costomer"
   },
@@ -76,21 +76,21 @@ const data4 = [
   {
     id: 1,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 4",
     job: "Costomer"
   },
   {
     id: 2,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 4",
     job: "Costomer"
   },
   {
     id: 3,
     text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum excepturi voluptates nostrum impedit maxime minus quia ea dolorum et aspernatur!",
-    img: "../../public/logo.png",
+    img: "../asstes/logo.png",
     name: "DATA 4",
     job: "Costomer"
   },

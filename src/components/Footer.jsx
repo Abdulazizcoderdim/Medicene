@@ -1,4 +1,4 @@
-import ImageLogo from "../../public/Fgima project5.png"
+import ImageLogo from "../assets/Fgima project5.png"
 
 const Footer = () => {
   return (

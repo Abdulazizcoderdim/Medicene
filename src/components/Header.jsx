@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ImageLogo from "../../public/Fgima project5.png"
+import ImageLogo from "../assets/Fgima project5.png"
 
 const Header = () => {
     const [openModal, setOpenModal] = useState(false)

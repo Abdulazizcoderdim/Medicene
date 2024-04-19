@@ -1,7 +1,7 @@
-import Image1 from "../../public/modal1.png";
-import Image2 from "../../public/modal2.png";
-import Image3 from "../../public/modal3.png";
-import Image4 from "../../public/modal4.png";
+import Image1 from "../assets/modal1.png";
+import Image2 from "../assets/modal2.png";
+import Image3 from "../assets/modal3.png";
+import Image4 from "../assets/modal4.png";
 
 const Page = () => {
   return (
