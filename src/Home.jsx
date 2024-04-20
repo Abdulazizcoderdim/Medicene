@@ -1,10 +1,13 @@
-import { useState } from "react"
-import ImageLogo from "../assets/Fgima project5.png"
-import { ShoppingCart } from 'lucide-react';
-import { Link } from "react-router-dom";
-import { UserButton } from "@clerk/clerk-react";
+import { SignInButton } from "@clerk/clerk-react"
 
-const Header = () => {
+import { useState } from "react"
+import ImageLogo from "./assets/Fgima project5.png"
+import { ShoppingCart } from 'lucide-react';
+import Home2 from "./components/Home";
+import Footer from "./components/Footer";
+import Testimonials from "./components/Testimonials";
+
+const Home = () => {
     const [openModal, setOpenModal] = useState(false)
     const [openRoute, setOpenRoute] = useState(false)
     const [openRoute2, setOpenRoute2] = useState(false)
@@ -18,6 +21,7 @@ const Header = () => {
         setOpenModal(false)
     }
   return (
+    <>
     <div className="bg-white relative">
        <div className="lg:container  px-5 py-2 flex items-center justify-between shadow-md">
           <div className="flex gap-x-2 items-center">
@@ -107,15 +111,19 @@ const Header = () => {
             
             <div className="flex ml-4 items-center gap-x-3">
                   
-
+                <SignInButton mode="modal" redirectURl="/dashboard"/>
                {/* <span className="cursor-pointer"><CircleUserRound /></span> */}
                <span className="cursor-pointer"> <ShoppingCart /></span>
-               <UserButton/>
+               
                
             </div>
           </nav>
        </div>
     </div>
+    <Home2/>
+    <Testimonials/>
+     <Footer/>
+    </>
   )
 }
 
@@ -152,4 +160,5 @@ function Modal() {
     )
 }
 
-export default Header
+export default Home
+

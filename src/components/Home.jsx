@@ -1,4 +1,4 @@
-const Home = () => {
+const Home2 = () => {
   return (
     <div className="border">
       <div className="lg:container px-5">
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home2;

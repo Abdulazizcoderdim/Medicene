@@ -1,21 +1,32 @@
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import Home from "./components/Home"
-import Page from "./components/Page"
-import Page1 from "./components/Page1"
-// import Products from "./components/Products"
-import Testimonials from "./components/Testimonials"
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
+import Dashboard from "./Dashboard"
+import Home from "./Home"
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react"
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route index element={<Home/>}/>
+      <Route path="/dashboard" element={<>
+         
+         <SignedIn>
+          <Dashboard/>
+         </SignedIn>
+
+         <SignedOut>
+           <RedirectToSignIn/>
+         </SignedOut>
+        
+      </>}/>
+    </>
+  )
+)
+
 
 const App = () => {
   return (
     <>
-    <Header/>
-    <Home/>
-    <Page/>
-    <Page1/>
-    {/* <Products/> */}
-    <Testimonials/>
-    <Footer/>
+     <RouterProvider router={router}/>
     </>
   )
 }
