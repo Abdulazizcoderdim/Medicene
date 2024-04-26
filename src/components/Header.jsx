@@ -1,14 +1,13 @@
 import { useState } from "react"
 import ImageLogo from "../assets/Fgima project5.png"
 import { ShoppingCart } from 'lucide-react';
-import { Link } from "react-router-dom";
-import { UserButton } from "@clerk/clerk-react";
 
-const Header = () => {
+const Header = ({cartItems}) => {
     const [openModal, setOpenModal] = useState(false)
     const [openRoute, setOpenRoute] = useState(false)
     const [openRoute2, setOpenRoute2] = useState(false)
     const [openRoute3, setOpenRoute3] = useState(false)
+    const [cart, setCart] = useState(false)
 
     const handleOpen = () => {
         setOpenModal(true)
@@ -109,8 +108,27 @@ const Header = () => {
                   
 
                {/* <span className="cursor-pointer"><CircleUserRound /></span> */}
-               <span className="cursor-pointer"> <ShoppingCart /></span>
-               <UserButton/>
+               <span className="relative cursor-pointer" onClick={()=>setCart(!cart)}> 
+                 <ShoppingCart />  
+                 <span className="absolute -top-2 -right-2 bg-white border border-red-700 w-5 h-5 rounded-full flex items-center justify-center p-2 text-red-700 text-sm font-bold">
+                   {cartItems}
+                 </span>
+               </span>
+          
+               {/* Cart Modal  */}
+              {cart && <div className="absolute top-14 right-0 min-w-40 bg-slate-500 rounded-lg p-3 shadow-lg"> 
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center flexc gap-2">
+                      <img src="" alt="" /> 
+                      {cartItems}  
+                  </div>
+                </div>
+
+              </div>}
+               {/* End cart modal */}
+          
+          
+               {/* <UserButton/> */}
                
             </div>
           </nav>
