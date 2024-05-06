@@ -1,4 +1,5 @@
 import { ShoppingCart } from 'lucide-react';
+import { useState } from 'react';
 
 const data =[
   {
@@ -28,7 +29,13 @@ const data =[
 ]
 
 
-const Products = ({addItem}) => {
+const Products = ({addItem, cartItems,setCartItems}) => {
+  const [cart, setCart] = useState(false)
+
+  const handleCick = () => {
+    addItem()
+    setCart(true)
+  }
   return (
     <div className="bg-white flex flex-col gap-16 border overflow-hidden">
       <div className="lg:container px-5 flex flex-col ">
@@ -50,7 +57,7 @@ const Products = ({addItem}) => {
                     <span className="font-bold text-xl">${item.newPrice}</span>
                     <span className="font-medium text-gray-500">${item.oldPrice}</span>
                   </div>
-                  <button onClick={addItem} className='flex items-center justify-center w-full text-white font-bold border-0 outline-none rounded-lg py-3 bg-gray-800 hover:bg-gray-900 active:bg-gray-950'><ShoppingCart/> Add to Cart</button>
+                  <button onClick={handleCick} className='flex items-center justify-center w-full text-white font-bold border-0 outline-none rounded-lg py-3 bg-gray-800 hover:bg-gray-900 active:bg-gray-950'><ShoppingCart/> Add to Cart</button>
                </div> 
             </div>
           ))}

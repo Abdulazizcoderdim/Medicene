@@ -25,7 +25,7 @@ const Home = () => {
      <Home2/>
      <Page/>
      <Page1/>
-     <Products addItem={addItem}/>
+     <Products addItem={addItem} cartItems={cartItems} setCartItems={setCartItems}/>
      <Testimonials/>
      <Footer/>
     </>

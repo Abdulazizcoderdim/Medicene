@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import ImageLogo from "../assets/Fgima project5.png"
 import { ShoppingCart } from 'lucide-react';
+import { Link } from "react-router-dom";
+import {MenuIcon} from 'lucide-react'
+import {AnimatePresence, motion} from "framer-motion"
 
 const Header = ({cartItems}) => {
     const [openModal, setOpenModal] = useState(false)
@@ -8,6 +11,7 @@ const Header = ({cartItems}) => {
     const [openRoute2, setOpenRoute2] = useState(false)
     const [openRoute3, setOpenRoute3] = useState(false)
     const [cart, setCart] = useState(false)
+    const modalRef = useRef()
 
     const handleOpen = () => {
         setOpenModal(true)
@@ -16,14 +20,20 @@ const Header = ({cartItems}) => {
     const handleClose = () => {
         setOpenModal(false)
     }
+
+    const modalClose1 = (e) => {
+      if(e.target === modalRef.current) setOpenModal(false)
+      
+    }
+
   return (
     <div className="bg-white relative">
        <div className="lg:container  px-5 py-2 flex items-center justify-between shadow-md">
           <div className="flex gap-x-2 items-center">
-              <span onClick={handleOpen} className="text-[30px] text-black cursor-pointer md:hidden">=</span>
+              <span onClick={handleOpen} className="text-[30px] text-black cursor-pointer md:hidden"><MenuIcon/></span>
 
               <div className="fixed top-0 left-0 z-50">
-               <div className={`${openModal ? "left-0" : "-left-56"} md:hidden shadow-xl gap-5 flex justify-between flex-col absolute top-0 h-[100vh] bg-black px-3 py-1 w-56 transition-all duration-300`}>
+               <div ref={modalRef} onClick={modalClose1} className={`${openModal ? "left-0" : "-left-56"}  md:hidden shadow-xl gap-5 flex justify-between flex-col absolute top-0 h-[100vh] bg-black px-3 py-1 w-56 transition-all duration-300`}>
                 <div className="flex flex-col gap-5">
                   <div className="flex w-full justify-between items-center">
                       <img src={ImageLogo} className="w-10 h-10" alt="" /> 
@@ -97,10 +107,10 @@ const Header = ({cartItems}) => {
             <FlyoutContent Dropdown={Modal} href="/teth-whitening">
                 <span>teth whitening</span>
             </FlyoutContent>
-            <FlyoutContent Dropdown={Modal} href="/toothpaste">
+            <FlyoutContent Dropdown={Modal1} href="/toothpaste">
                 <span>toothpaste</span>
             </FlyoutContent>
-            <FlyoutContent Dropdown={Modal} href="/mouthwash">
+            <FlyoutContent Dropdown={Modal2} href="/mouthwash">
                 <span>mouthwash</span>
             </FlyoutContent>
             
@@ -150,14 +160,21 @@ function FlyoutContent({href,children,Dropdown}) {
              {children}
              <span className={`${open ? "rotate-90" : "rotate-0"} transition-all duration-300`}>&gt;</span>
            </a>
-
+          <AnimatePresence>  
            {showopen && 
-            <div className="absolute top-9 -translate-x-1/2 left-1/2 bg-white shadow-lg hover:shadow-xl transition duration-200">
+            <motion.div
+              initial={{opacity:0, y: 15}}
+              animate={{opacity:1, y: 0}}
+              exit={{opacity:0, y: 15}}
+              style={{x: "-50%"}} 
+              transition={{duration: 0.3, ease: "easeInOut"}}
+              className="absolute top-9 left-1/2 bg-white shadow-lg hover:shadow-xl">
               <div className="absolute -top-4 h-4 left-0 right-0 bg-transparent"/>
               <div className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white"/>
-              <Modal/> 
-            </div>
+              <Dropdown/> 
+            </motion.div>
            }
+           </AnimatePresence>
         </div>
     )
 }
@@ -165,7 +182,24 @@ function FlyoutContent({href,children,Dropdown}) {
 function Modal() {
     return(
         <div className="w-64 h-52 px-4 py-2">
-           asdas
+           <div className="flex flex-col gap-3 text-xl">
+             <Link to="/teth">teeth</Link>
+           </div>
+        </div>
+    )
+}
+function Modal1() {
+    return(
+        <div className="w-64 h-52 px-4 py-2">
+           ASAAS
+        </div>
+    )
+}
+
+function Modal2() {
+    return(
+        <div className="w-64 h-52 px-4 py-2">
+           ASAAS
         </div>
     )
 }
